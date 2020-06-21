@@ -1,20 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <title>Page Title</title>
+  <title>SarHabTech</title>
   <style>
     body {
       font-family: Arial, Helvetica, sans-serif;
+      background-color: #99CCFF;
     }
+
+    .button {
+      text-align: center;
+      width: 100px;
+      height: 50px;
+      margin-top:25px;
+      margin-right: 50px;
+      margin-left: 50px;
+      border: white;
+    }
+    .button1{
+      background-color:#90ee90;
+
+    }
+    .button2{
+      background-color:#ED1C24;
+    }
+    .button3{
+      background-color: yellow;
+    }
+    .img1{
+      width: 250px;
+      height: 200px;
+      display:none;
+      margin-left:auto;
+      margin-right:auto;
+    }
+    .img2{
+      width: 200px;
+      height: 250px;
+      display:none;
+      margin-left:auto;
+      margin-right:auto;
+    }
+
   </style>
+
+
 </head>
 
 <body>
 
-  <h1>My Website</h1>
-  <p>A website created by me.</p>
+<center>
+  <h1>Here's to staying on task...</h1>
+  <p>
+    <h3>
+    Some of us get distracted pretty easily.<br>
+    After you click the "Get Started" button, you have 15 minutes to be productive.<br>
+    At the end, you get an alert. <br>
+    You're asked if you were productive during the past 15 minutes. <br><br>
+     If you have, you get a picture of a happy cat. <br>
+    If not, you get a disappointed cat haunting your screen. <br>
+    </h3>
+    <h2>
+      AVOID THE SAD CAT AT ALL COSTS!
+    <h2>
+    <h3>
+      When your 15 minutes is up, simply reset by pressing the "Get Started" button and repeat!
+    </h3>
+  </p>
 
+  <button class="button button3" onClick= "setTimeout(getClick, 3000);startMessage();imageChange()" >Click Here to Start</button>
+    <script>
+      function getClick(){
+        alert("Have you REALLY been productive?");
+        }
+      function startMessage(){
+        alert("Time starts now!")
+      }
+      function imageChange(){
+      document.getElementById('happy').style.display="none";
+      document.getElementById('sad').style.display="none";
+      }
+    </script>
+<br>
+<button class="button button1" onClick = "happyCat()" >Yes!</button>
+<script type = "text/javascript">
+   function happyCat(){
+     document.getElementById('happy').style.display="block";
+   }
+
+ </script>
+
+<button class="button button2" onClick ="sadCat()"">No :(</button>
+<script type = "text/javascript">
+  function sadCat(){
+    document.getElementById('sad').style.display="block";
+  }
+
+</script>
+
+
+  </center>
+  <img src="sad.jpg" id="sad" alt="sad cat" class = "img1"/ >
+  <img src="happy.jpg" id = "happy" alt="happy cat" class = "img2" />
 </body>
 
 </html>
